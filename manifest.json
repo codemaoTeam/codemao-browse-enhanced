@@ -1,0 +1,64 @@
+{
+    "manifest_version": 3,
+    "name": "Codemao Browse Enhanced",
+    "version": "0.1.0",
+    "description": "用更便捷的方式访问编程猫社区",
+    "icons": {
+        "16": "images/logo/icon16.png",
+        "48": "images/logo/icon48.png",
+        "128": "images/logo/icon128.png"
+    },
+    "action": {
+        "default_icon": {
+            "19": "images/logo/icon19.png",
+            "38": "images/logo/icon38.png"
+        },
+        "default_title": "编程猫社区浏览增强",
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "*://shequ.codemao.cn/*"
+            ],
+            "resources": [
+                "*"
+            ]
+        }
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://shequ.codemao.cn/*"
+            ],
+            "js": [
+                "lib/jquery.min.js",
+                "lib/jquery-wait.js",
+                "js/tools.js"
+            ]
+        },
+        {
+            "matches": [
+                "*://shequ.codemao.cn/community",
+                "*://shequ.codemao.cn/work_shop/*"
+            ],
+            "js": [
+                "js/post-forum.js"
+            ]
+        },
+        {
+            "matches": [
+                "*://shequ.codemao.cn/community/*"
+            ],
+            "js": [
+                "lib/editormd.min.js",
+                "lib/marked.min.js",
+                "lib/prettify.min.js",
+                "js/read-forum.js"
+            ],
+            "css": [
+                "css/editormd.preview.min.css"
+            ]
+        }
+    ]
+}
