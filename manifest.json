@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Codemao Browse Enhanced",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "用更便捷的方式访问编程猫社区",
     "icons": {
         "16": "images/logo/icon16.png",
@@ -16,16 +16,9 @@
         "default_title": "编程猫社区浏览增强",
         "default_popup": "popup.html"
     },
-    "web_accessible_resources": [
-        {
-            "matches": [
-                "*://shequ.codemao.cn/*"
-            ],
-            "resources": [
-                "*"
-            ]
-        }
-    ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -34,7 +27,8 @@
             "js": [
                 "lib/jquery.min.js",
                 "lib/jquery-wait.js",
-                "js/tools.js"
+                "js/tools.js",
+                "js/reset-title.js"
             ]
         },
         {
