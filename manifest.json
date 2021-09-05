@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Codemao Browse Enhanced",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "用更便捷的方式访问编程猫社区",
     "icons": {
         "16": "images/logo/icon16.png",
