@@ -19,6 +19,10 @@
     "background": {
         "service_worker": "background.js"
     },
+    "permissions": [
+        "contextMenus",
+        "notifications"
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -28,7 +32,8 @@
                 "lib/jquery.min.js",
                 "lib/jquery-wait.js",
                 "js/tools.js",
-                "js/reset-title.js"
+                "js/reset-title.js",
+                "js/blocked-word.js"
             ]
         },
         {
