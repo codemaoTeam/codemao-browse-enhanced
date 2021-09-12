@@ -1,3 +1,5 @@
+// 修改帖子页面的 HTML 为 Markdown 渲染后的 HTML
+
 function modify() {
   // 获取帖子内容
   const forumContent = $('.r-community-r-detail--forum_content')[0];
@@ -15,7 +17,7 @@ function modify() {
       forumContent.className = 'markdown-body editormd-html-preview';
       forumContent.id = 'markdown';
       // 渲染 Markdown 为 HTML
-      editormd.markdownToHTML('markdown', { htmlDecode: true });
+      editormd.markdownToHTML('markdown');
     } else if (sign == 'html') {
       forumText = entityToString(forumText);
       // 用 iframe 包装 HTML 内容，以防 XSS 攻击
