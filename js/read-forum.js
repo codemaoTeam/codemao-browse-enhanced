@@ -5,8 +5,8 @@ function modify() {
   if (data.length == 2) {
     const sign = data[0].innerText;
     let forumText = data[1].innerText;
-    forumContent.innerHTML = '';
     if (sign == 'Markdown') {
+      forumContent.innerHTML = '';
       // 把 Markdown 代码加载到文档中
       const textarea = document.createElement('textarea');
       textarea.style = 'display: none;';
@@ -17,6 +17,7 @@ function modify() {
       // 渲染 Markdown 为 HTML
       editormd.markdownToHTML('markdown', { htmlDecode: true });
     } else if (sign == 'html') {
+      forumContent.innerHTML = '';
       forumText = entityToString(forumText);
       // 用 iframe 包装 HTML 内容，以防 XSS 攻击
       const container = document.createElement('iframe');
