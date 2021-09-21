@@ -1,3 +1,10 @@
+$('#image').fileinput({
+  language: 'zh',
+  allowedFileTypes: ['image'],
+  dropZoneTitle: '拖拽上传...',
+  showClose: false,
+});
+
 const timestamp = new Date().getTime();
 const urlPath = 'community/' + btoa(`cbe_${timestamp}_${randomString()}`);
 
@@ -32,14 +39,18 @@ function upload() {
         contentType: false,
         success: function (response) {
           const imageURL = bucketURL + response.key;
-          alert(imageURL);
+          $('#image-url').text(imageURL);
+          $('#success').css('display', 'block');
+          $('.file-input').css('display', 'none');
         },
         error: function (error) {
-          alert(error.responseJSON.error);
+          $('#error-msg').text(error.responseJSON.error);
+          $('#error').css('display', 'block');
+          $('.file-input').css('display', 'none');
         },
       });
     },
   });
 }
 
-$('#upload').click(upload);
+$('.fileinput-upload-button').click(upload);
