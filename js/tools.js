@@ -25,7 +25,7 @@ function entityToString(entity) {
 }
 
 function randomString(length) {
-  length = length || 28;
+  length = length || 7;
   var str = 'abcdefghijklmnopqrstuvwxyz1234567890',
     a = str.length,
     res = '';

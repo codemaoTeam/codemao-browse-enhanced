@@ -6,7 +6,7 @@ $('#image').fileinput({
 });
 
 const timestamp = new Date().getTime();
-const urlPath = 'community/' + btoa(`cbe_${timestamp}_${randomString()}`);
+const urlPath = 'community/' + btoa(`${timestamp}_${randomString()}`);
 
 function upload() {
   $.ajax({
