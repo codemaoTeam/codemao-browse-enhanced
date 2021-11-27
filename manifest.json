@@ -3,6 +3,7 @@
     "name": "Codemao Browse Enhanced",
     "version": "1.0.0",
     "description": "用更便捷的方式访问编程猫社区",
+    "homepage_url": "https://cbe.codemao.work/",
     "icons": {
         "16": "images/logo/icon16.png",
         "48": "images/logo/icon48.png",
@@ -22,6 +23,9 @@
     "permissions": [
         "contextMenus",
         "notifications"
+    ],
+    "host_permissions": [
+        "*://open-service.codemao.cn/*"
     ],
     "content_scripts": [
         {
