@@ -15,15 +15,17 @@ chrome.runtime.onMessage.addListener((req) => {
   }
 });
 
-chrome.contextMenus.create({
-  type: 'normal',
-  title: '处理屏蔽词：『%s』',
-  contexts: ['selection'],
-  documentUrlPatterns: [
-    '*://shequ.codemao.cn/*',
-    'about:blank', // 富文本编辑器内部
-  ],
-  id: 'blocked-word',
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    type: 'normal',
+    title: '处理屏蔽词：『%s』',
+    contexts: ['selection'],
+    documentUrlPatterns: [
+      '*://shequ.codemao.cn/*',
+      'about:blank', // 富文本编辑器内部
+    ],
+    id: 'blocked-word',
+  });
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
