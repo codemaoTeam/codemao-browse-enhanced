@@ -25,11 +25,7 @@
         "notifications"
     ],
     "host_permissions": [
-<<<<<<< HEAD
-        "*://open-service.codemao.cn/*"
-=======
         "*://*.codemao.cn/*"
->>>>>>> 818bc05 (fix: 修复跨域请求失败问题)
     ],
     "content_scripts": [
         {
