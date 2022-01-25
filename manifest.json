@@ -1,8 +1,9 @@
 {
     "manifest_version": 3,
     "name": "Codemao Browse Enhanced",
-    "version": "0.3.1",
+    "version": "1.0.0",
     "description": "用更便捷的方式访问编程猫社区",
+    "homepage_url": "https://cbe.codemao.work/",
     "icons": {
         "16": "images/logo/icon16.png",
         "48": "images/logo/icon48.png",
@@ -19,6 +20,13 @@
     "background": {
         "service_worker": "background.js"
     },
+    "permissions": [
+        "contextMenus",
+        "notifications"
+    ],
+    "host_permissions": [
+        "*://*.codemao.cn/*"
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -28,7 +36,8 @@
                 "lib/jquery.min.js",
                 "lib/jquery-wait.js",
                 "js/tools.js",
-                "js/reset-title.js"
+                "js/reset-title.js",
+                "js/blocked-word.js"
             ]
         },
         {

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编程猫图床</title>
+
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./js/tools.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="./lib/popper.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/fileinput.min.css" />
+    <script src="./lib/fileinput.min.js"></script>
+    <script src="./lib/fileinput.local.zh.min.js"></script>
+
+    <style>
+      .result {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>编程猫图床</h1>
+        <p>请勿频繁上传重复的图片</p>
+      </div>
+      <input type="file" accept="image/*" id="image" />
+
+      <div class="result">
+        <div id="success" class="alert alert-success" style="display: none">
+          <strong>上传成功！</strong>
+          <br />
+          图片路径：<span id="image-url"></span>
+        </div>
+
+        <div id="error" class="alert alert-danger" style="display: none">
+          <strong>上传失败！</strong>
+          <br />
+          <span id="error-msg"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/image-bed.js"></script>
+  </body>
+</html>

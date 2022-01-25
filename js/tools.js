@@ -23,3 +23,12 @@ function entityToString(entity) {
     .join('');
   return tmp;
 }
+
+function randomString(length) {
+  length = length || 7;
+  var str = 'abcdefghijklmnopqrstuvwxyz1234567890',
+    a = str.length,
+    res = '';
+  for (i = 0; i < length; i++) res += str.charAt(Math.floor(Math.random() * a));
+  return res;
+}
