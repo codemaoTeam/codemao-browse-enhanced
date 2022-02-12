@@ -40,8 +40,14 @@ function upload() {
         success: function (response) {
           const imageURL = bucketURL + response.key;
           $('#image-url').text(imageURL);
+          $('#uploaded-image').attr('src', imageURL);
           $('#success').css('display', 'block');
           $('.file-input').css('display', 'none');
+          chrome.storage.local.get({ imageBedHistory: [] }, (data) => {
+            const history = data.imageBedHistory;
+            history.push(imageURL);
+            chrome.storage.local.set({ imageBedHistory: history });
+          });
         },
         error: function (error) {
           $('#error-msg').text(error.responseJSON.error);
