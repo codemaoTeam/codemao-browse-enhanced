@@ -21,6 +21,12 @@
       .result {
         margin-top: 10px;
       }
+
+      #uploaded-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
     </style>
   </head>
 
@@ -28,23 +34,11 @@
     <div class="container">
       <div class="jumbotron">
         <h1>编程猫图床</h1>
-        <p>请勿频繁上传重复的图片</p>
+        <a href="./image-bed-history.html" target="_blank">历史纪录</a>
       </div>
-      <input type="file" accept="image/*" id="image" />
+      <input type="file" accept="image/*" id="image" multiple />
 
-      <div class="result">
-        <div id="success" class="alert alert-success" style="display: none">
-          <strong>上传成功！</strong>
-          <br />
-          图片路径：<span id="image-url"></span>
-        </div>
-
-        <div id="error" class="alert alert-danger" style="display: none">
-          <strong>上传失败！</strong>
-          <br />
-          <span id="error-msg"></span>
-        </div>
-      </div>
+      <div class="result"></div>
     </div>
 
     <script src="./js/image-bed.js"></script>

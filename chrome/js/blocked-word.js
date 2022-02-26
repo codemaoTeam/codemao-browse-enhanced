@@ -1,6 +1,7 @@
+const delimiter = '\u200b';
+
 chrome.runtime.onMessage.addListener((message) => {
   if (message.name == 'blockedWord') {
-    const delimiter = '\u200b';
     text = message.info.selectionText;
     var processedText = '';
     for (let char of text) {
@@ -15,3 +16,12 @@ chrome.runtime.onMessage.addListener((message) => {
     });
   }
 });
+
+// 发生复制事件时，去掉屏蔽分隔符
+function removeDelimiter(e) {
+  navigator.clipboard.readText().then((text) => {
+    navigator.clipboard.writeText(text.split(delimiter).join(''));
+  });
+}
+
+document.addEventListener('copy', removeDelimiter, true);

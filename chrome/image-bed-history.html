@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="./lib/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="./lib/popper.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/image-bed-history.css" />
+    <script src="./js/image-bed-history.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="alert alert-warning">
+        <strong>警告!</strong>
+        历史记录只会存储在本地
+      </div>
+      <div class="jumbotron">
+        <h1>编程猫图床 | 历史记录</h1>
+        <p>单击图片即可复制图片链接</p>
+        <button
+          type="button"
+          class="btn btn-link"
+          data-toggle="modal"
+          data-target="#clear-modal"
+        >
+          清除记录
+        </button>
+      </div>
+
+      <div class="modal fade" id="clear-modal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">确定要清除吗?</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">清除后数据无法恢复!</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="clear-btn">
+                确定
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jumbotron">
+        <h2 class="empty">还没有上传任何图片...</h2>
+        <div class="row"></div>
+      </div>
+    </div>
+  </body>
+</html>

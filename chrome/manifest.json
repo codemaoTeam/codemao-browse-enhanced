@@ -22,7 +22,8 @@
     },
     "permissions": [
         "contextMenus",
-        "notifications"
+        "notifications",
+        "storage"
     ],
     "host_permissions": [
         "*://*.codemao.cn/*"

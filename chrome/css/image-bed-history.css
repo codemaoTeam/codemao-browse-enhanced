@@ -1,0 +1,17 @@
+.empty {
+  text-align: center;
+}
+
+.image {
+  margin-bottom: 30px;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.image:hover {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
