@@ -47,7 +47,7 @@
                 "*://shequ.codemao.cn/work_shop/*"
             ],
             "js": [
-                "js/post-forum.js"
+                "js/send-post.js"
             ]
         },
         {
@@ -58,7 +58,8 @@
                 "lib/editormd.min.js",
                 "lib/marked.min.js",
                 "lib/prettify.min.js",
-                "js/read-forum.js"
+                "js/read-post.js",
+                "js/up-post.js"
             ],
             "css": [
                 "css/editormd.preview.min.css"
